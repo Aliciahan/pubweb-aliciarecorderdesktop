@@ -1,0 +1,23 @@
+# Alicia Recorder's public pages, built by GitHub Pages' own Jekyll from the root of the gh-pages branch.
+# Plain Jekyll: no theme, no plugins of our own, nothing loaded from other servers.
+
+title: Alicia Recorder
+description: >-
+  Recordings into transcripts, summaries, minutes and a daily journal, transcribed on your Mac.
+lang: en
+
+url: https://aliciahan.github.io
+baseurl: /pubweb-aliciarecorderdesktop
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+
+# GitHub Pages would otherwise fall back to its default theme; this site has its own layout and stylesheet.
+theme: null
+plugins: []
+
+exclude:
+  - README.md
