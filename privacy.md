@@ -119,8 +119,8 @@ the weekly review on the first morning after the week ends; answers when you ask
 Connection” also sends test prompts. The task routes also list “Chinese punctuation” and “Embeddings”; nothing is sent
 through them: search embeddings are computed on your Mac.
 
-**What is sent, per task.** This is the list the consent window shows; for questions it adds that earlier passages of
-the same conversation are sent again.
+**What is sent, per task.** This is the list the consent window shows; for questions it adds how follow-ups in the
+same conversation are handled.
 
 | Task | What is sent |
 |---|---|
@@ -128,7 +128,7 @@ the same conversation are sent again.
 | Minutes | The same as for the summary, without the type. |
 | Daily journal | The summaries of that day's recordings (not their transcripts), with each recording's time, type, title and projects; your name and “About You” text. Recordings kept local are left out and only counted. |
 | Weekly review | Each day's journal of the week (overview, what was done, decisions, action items and their owners, things worth remembering) with the projects involved; your name and “About You” text. |
-| Ask (questions) | Your question; up to 12 passages per question from your transcripts, summaries and journals, each with its date, time and recording title; the earlier questions, passages and answers of the same conversation; your name and “About You” text. |
+| Ask (questions) | Your question; up to 12 passages per question from your transcripts, summaries and journals, each with its date, time and recording title; the earlier questions, passages and answers of the same conversation, except an earlier question that drew on content that may not go to this provider now (a “Local Only” recording, or a journal waiting to be rewritten): that one is left out entirely, with its passages and its answer; your name and “About You” text. |
 | Testing a provider (“Test Connection”) | A request for the provider's list of models and a few made-up test prompts without any of your content (for example “ping”, “What is 2 + 3?”); if you choose to measure the limits, filler sentences unrelated to you. |
 
 **What is never sent to an AI provider:** audio, voiceprints, your API keys for other providers, your settings, and
@@ -180,9 +180,11 @@ conversation is sent to that provider before it can be recognized; from then on 
 
 If you mark a recording “Local Only” after its summary was written, the summary stays, and the text already sent
 cannot be called back. The journal of that day is rewritten without it about ten minutes later; until then, that
-day's journal is not used for answers or weekly reviews from a cloud provider. In Ask, every follow-up question sends
-the earlier questions, passages and answers of the same conversation again, so passages sent before you marked the
-recording go along with later questions of that conversation; a new conversation starts without them.
+day's journal is not used for answers or weekly reviews from a cloud provider. In Ask, a follow-up question normally
+sends the earlier questions, passages and answers of the same conversation again. Once you mark the recording, an
+earlier question that drew on it is no longer sent with later questions to a cloud provider: it is left out entirely,
+with its passages and its answer. The same holds for a question you had answered again by a local model with “Local
+Only” recordings.
 
 **The provider is yours, not ours.** The app sends these requests directly from your Mac to the provider, under the
 account and agreement you have with that provider. We do not receive, see or store them, we have no agreement with
@@ -411,7 +413,7 @@ App 按提供方的地址判断它在本机、局域网还是云端：本机（l
 
 **什么时候发送文字。** 只为你在 设置 › AI 模型 › 任务路线 里交给它的任务发送（首次设置的助手会把笔记、日记和问答交给它）。每段录音转写完成后自动写总结和纪要，你点“重新生成”时再写一次；当天有了新的总结后写日记；一周结束后的第一天早上写周回顾；你提问时回答。你点“测试连接”时也会发测试提示。任务路线里还有“中文标点”和“嵌入”两项，App 不经过它们发送任何内容：搜索用的向量在你的 Mac 上计算。
 
-**每项任务发送什么。** 这是同意窗口里列的内容；问答一项多写了一点：同一次对话里之前发过的片段会再发一次。
+**每项任务发送什么。** 这是同意窗口里列的内容；问答一项多写了一点：同一次对话里追问时怎么处理之前的问答。
 
 | 任务 | 发送的内容 |
 |---|---|
@@ -419,7 +421,7 @@ App 按提供方的地址判断它在本机、局域网还是云端：本机（l
 | 纪要 | 和总结相同，只是不含类型。 |
 | 每日日记 | 当天各段录音的总结（不含逐字稿），以及每段录音的时间、类型、标题和所属项目；你的名字和“关于你”。只限本地处理的录音不写进去，只计数。 |
 | 周回顾 | 这一周每天的日记（概要、做了什么、决定、待办和负责人、值得记住的事）和相关的项目名；你的名字和“关于你”。 |
-| 问答 | 你的问题；每次提问从逐字稿、总结和日记里搜到的最多 12 段文字，各带日期、时间和录音标题；同一次对话里之前的问题、片段和回答；你的名字和“关于你”。 |
+| 问答 | 你的问题；每次提问从逐字稿、总结和日记里搜到的最多 12 段文字，各带日期、时间和录音标题；同一次对话里之前的问题、片段和回答，但哪一轮用到了现在不能发给这个提供方的内容（“仅本地”的录音，或等待重写的日记），那一轮就整个不发，连同它的片段和回答；你的名字和“关于你”。 |
 | 测试提供方（“测试连接”） | 请求提供方的模型列表，以及几条不含你任何内容的测试提示（例如“ping”“What is 2 + 3?”）；选了测量上限时，还有一些与你无关的填充句子。 |
 
 **从不发给 AI 提供方的：** 音频、声纹、其他提供方的 API key、你的设置，以及资料库里除上表所列文字以外的文件。每个请求都带着你在这个提供方的 API key，这是它的服务要求的。
@@ -445,7 +447,7 @@ App 按提供方的地址判断它在本机、局域网还是云端：本机（l
 - 给“笔记”设一条本地路线（设置 › AI 模型 › 任务路线）：App 会先让这个本地模型判断类型，发给它的是标题和逐字稿的开头，判断为医疗的就留在本地；或者
 - 在写总结之前把这段录音标成“仅本地”，例如录完或导入之后马上标。
 
-如果在总结写好之后才标成“仅本地”，已有的总结保留，已经发出的文字无法收回。当天的日记大约十分钟后会重写，不再包含这段录音；在那之前，云端提供方回答问题和写周回顾时不使用当天的日记。在问答里，每次追问都会把同一次对话里之前的问题、片段和回答再发一遍，所以标记之前已经发过的片段会随这次对话后面的问题一起再发；新开一个对话就不带它们。
+如果在总结写好之后才标成“仅本地”，已有的总结保留，已经发出的文字无法收回。当天的日记大约十分钟后会重写，不再包含这段录音；在那之前，云端提供方回答问题和写周回顾时不使用当天的日记。在问答里，追问通常会把同一次对话里之前的问题、片段和回答再发一遍。录音标成“仅本地”以后，之前用到它的那一轮问答不再随后面的问题发给云端提供方：整轮不发，连同它的片段和回答。你用本地模型重答、用到了“仅本地”录音的那一轮也一样。
 
 **提供方是你的，不是我们的。** 这些请求由你的 Mac 直接发给提供方，适用你和这个提供方之间的账号和协议。我们收不到、看不到，也不保存这些内容；我们和提供方之间没有关于你的数据的协议，无法保证它如何处理。提供方保存什么、保存多久、是否用于训练，由它自己的条款和隐私政策决定。同意之前请先阅读，有关它持有的数据请直接联系它。
 
