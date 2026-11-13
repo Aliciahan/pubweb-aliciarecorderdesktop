@@ -101,7 +101,8 @@ Writing summaries, minutes, journals, weekly reviews and answers needs a languag
 AI Models or during setup:
 
 - a **cloud provider** used with your own account and API key (for example Anthropic, OpenAI, Google Gemini,
-  DeepSeek, Mistral, OpenRouter, Azure OpenAI, or any other server you enter), or
+  DeepSeek, Mistral, OpenRouter, Azure OpenAI, Claude on Microsoft Foundry, or any other server you enter; with
+  Claude on Microsoft Foundry the text goes to the Claude deployment in your own Microsoft Azure resource), or
 - a model on **this Mac** or on your **local network** (for example Ollama, LM Studio, vLLM or a llama.cpp server), or
   Apple's on-device model on Macs where it is available.
 
@@ -129,7 +130,7 @@ same conversation are handled.
 | Daily journal | The summaries of that day's recordings (not their transcripts), with each recording's time, type, title and projects; your name and “About You” text. Recordings kept local are left out and only counted. |
 | Weekly review | Each day's journal of the week (overview, what was done, decisions, action items and their owners, things worth remembering) with the projects involved; your name and “About You” text. |
 | Ask (questions) | Your question; up to 12 passages per question from your transcripts, summaries and journals, each with its date, time and recording title; the earlier questions, passages and answers of the same conversation, except an earlier question that drew on content that may not go to this provider now (a “Local Only” recording, or a journal waiting to be rewritten): that one is left out entirely, with its passages and its answer; your name and “About You” text. |
-| Testing a provider (“Test Connection”) | A request for the provider's list of models and a few made-up test prompts without any of your content (for example “ping”, “What is 2 + 3?”); if you choose to measure the limits, filler sentences unrelated to you. |
+| Testing a provider (“Test Connection”) | A request for the provider's list of models (Claude on Microsoft Foundry has none: there, only the test prompts go to the deployment you name) and a few made-up test prompts without any of your content (for example “ping”, “What is 2 + 3?”); if you choose to measure the limits, filler sentences unrelated to you. |
 
 **What is never sent to an AI provider:** audio, voiceprints, your API keys for other providers, your settings, and
 the files in your library other than the text listed above. Every request carries your API key for that provider, as
@@ -406,7 +407,7 @@ for what the app sends, describe it in the app's release notes.
 
 写总结、纪要、日记、周回顾和回答问题需要一个大模型。你在 设置 › AI 模型 或首次设置时选择：
 
-- 用你自己的账号和 API key 的**云端提供方**（例如 Anthropic、OpenAI、Google Gemini、DeepSeek、Mistral、OpenRouter、Azure OpenAI，或你填写的其他服务器地址）；或者
+- 用你自己的账号和 API key 的**云端提供方**（例如 Anthropic、OpenAI、Google Gemini、DeepSeek、Mistral、OpenRouter、Azure OpenAI、Microsoft Foundry 上的 Claude，或你填写的其他服务器地址；用 Microsoft Foundry 上的 Claude 时，文字发到你自己的 Microsoft Azure 资源里部署的 Claude）；或者
 - **这台 Mac** 上或**局域网**里的模型（例如 Ollama、LM Studio、vLLM、llama.cpp server），或在支持的 Mac 上使用 Apple 本机模型。
 
 App 按提供方的地址判断它在本机、局域网还是云端：本机（localhost）、局域网（私有地址、`.local` 名称）、云端（其他所有地址）。Ollama 的云端模型（名字以 `-cloud` 或 `:cloud` 结尾）虽然经由你的 Mac 访问，也算云端。你可以把某个提供方设成“可能转发到云端”，它就按云端算。你也可以在确认之后，把局域网以外的一台服务器“按本地对待”（“我控制的服务器”）：这样它也会收到你只限本地处理的录音，而那次确认就是你同意把内容发给它。
@@ -422,7 +423,7 @@ App 按提供方的地址判断它在本机、局域网还是云端：本机（l
 | 每日日记 | 当天各段录音的总结（不含逐字稿），以及每段录音的时间、类型、标题和所属项目；你的名字和“关于你”。只限本地处理的录音不写进去，只计数。 |
 | 周回顾 | 这一周每天的日记（概要、做了什么、决定、待办和负责人、值得记住的事）和相关的项目名；你的名字和“关于你”。 |
 | 问答 | 你的问题；每次提问从逐字稿、总结和日记里搜到的最多 12 段文字，各带日期、时间和录音标题；同一次对话里之前的问题、片段和回答，但哪一轮用到了现在不能发给这个提供方的内容（“仅本地”的录音，或等待重写的日记），那一轮就整个不发，连同它的片段和回答；你的名字和“关于你”。 |
-| 测试提供方（“测试连接”） | 请求提供方的模型列表，以及几条不含你任何内容的测试提示（例如“ping”“What is 2 + 3?”）；选了测量上限时，还有一些与你无关的填充句子。 |
+| 测试提供方（“测试连接”） | 请求提供方的模型列表（Microsoft Foundry 上的 Claude 没有模型列表，只把测试提示发给你填的部署），以及几条不含你任何内容的测试提示（例如“ping”“What is 2 + 3?”）；选了测量上限时，还有一些与你无关的填充句子。 |
 
 **从不发给 AI 提供方的：** 音频、声纹、其他提供方的 API key、你的设置，以及资料库里除上表所列文字以外的文件。每个请求都带着你在这个提供方的 API key，这是它的服务要求的。
 
