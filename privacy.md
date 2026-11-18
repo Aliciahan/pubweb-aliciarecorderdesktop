@@ -13,7 +13,7 @@ description: What Alicia Recorder stores on your Mac, what it sends to whom, and
 
 # Alicia Recorder — Privacy Policy {#english}
 
-**Effective date:** 12 November 2026
+**Effective date:** 18 November 2026
 
 **Developer:** Aliciahan (independent developer), “we” or “us” below
 
@@ -103,8 +103,7 @@ AI Models or during setup:
 - a **cloud provider** used with your own account and API key (for example Anthropic, OpenAI, Google Gemini,
   DeepSeek, Mistral, OpenRouter, Azure OpenAI, Claude on Microsoft Foundry, or any other server you enter; with
   Claude on Microsoft Foundry the text goes to the Claude deployment in your own Microsoft Azure resource), or
-- a model on **this Mac** or on your **local network** (for example Ollama, LM Studio, vLLM or a llama.cpp server), or
-  Apple's on-device model on Macs where it is available.
+- a model on **this Mac** or on your **local network** (for example Ollama, LM Studio, vLLM or a llama.cpp server).
 
 The app decides whether a provider is local or in the cloud from its address: this Mac (localhost), the local network
 (private addresses, `.local` names) or the cloud (everything else). Ollama's cloud models (names ending in `-cloud` or
@@ -152,8 +151,8 @@ terms, and how to withdraw. Nothing is ticked in advance; you answer “Agree an
 - Your answer is kept for that provider and server name. If the address changes, the app asks again.
 - You can withdraw your consent at any time in Settings › AI Models (“Withdraw Consent”). No new request is sent to
   the provider after that; a request already under way may finish. Text already sent cannot be called back.
-- Providers on this Mac or your local network and Apple's on-device model do not need this consent, because the data
-  does not leave your Mac or your network.
+- Providers on this Mac or your local network do not need this consent, because the data does not leave your Mac or
+  your network.
 
 **Recordings kept local.** By default every recording may be sent to a provider you agreed to, private ones included.
 These recordings are kept **local-only**:
@@ -250,7 +249,6 @@ The Mac App Store version does not include them.
 - **Reminders.** When you click “Sync to Reminders” on the To Do page, the app adds open action items to a list
   named “Alicia Recorder” in the Reminders app (the item, the recording's date and title, the owner and due date when
   known) and keeps their completion in sync. If you use iCloud for Reminders, Apple syncs them.
-- **Apple's on-device model**, if you add it, runs on your Mac.
 - **The App Store** (Mac App Store version): for the trial and the purchase, section 4.7.
 
 ### 4.6 The Mac App Store version and the direct download
@@ -363,7 +361,7 @@ for what the app sends, describe it in the app's release notes.
 
 # Alicia Recorder 隐私政策 {#chinese}
 
-**生效日期：** 2026 年 11 月 12 日
+**生效日期：** 2026 年 11 月 18 日
 
 **开发者：** Aliciahan（个人开发者），下称“我们”
 
@@ -408,7 +406,7 @@ for what the app sends, describe it in the app's release notes.
 写总结、纪要、日记、周回顾和回答问题需要一个大模型。你在 设置 › AI 模型 或首次设置时选择：
 
 - 用你自己的账号和 API key 的**云端提供方**（例如 Anthropic、OpenAI、Google Gemini、DeepSeek、Mistral、OpenRouter、Azure OpenAI、Microsoft Foundry 上的 Claude，或你填写的其他服务器地址；用 Microsoft Foundry 上的 Claude 时，文字发到你自己的 Microsoft Azure 资源里部署的 Claude）；或者
-- **这台 Mac** 上或**局域网**里的模型（例如 Ollama、LM Studio、vLLM、llama.cpp server），或在支持的 Mac 上使用 Apple 本机模型。
+- **这台 Mac** 上或**局域网**里的模型（例如 Ollama、LM Studio、vLLM、llama.cpp server）。
 
 App 按提供方的地址判断它在本机、局域网还是云端：本机（localhost）、局域网（私有地址、`.local` 名称）、云端（其他所有地址）。Ollama 的云端模型（名字以 `-cloud` 或 `:cloud` 结尾）虽然经由你的 Mac 访问，也算云端。你可以把某个提供方设成“可能转发到云端”，它就按云端算。你也可以在确认之后，把局域网以外的一台服务器“按本地对待”（“我控制的服务器”）：这样它也会收到你只限本地处理的录音，而那次确认就是你同意把内容发给它。
 
@@ -433,7 +431,7 @@ App 按提供方的地址判断它在本机、局域网还是云端：本机（l
 - 你同意之前，App 不会向这个提供方发出任何请求，连请求模型列表都不会。这一点在每个请求发出的地方检查，不只靠窗口。需要它的总结会等待，你同意后自动继续。
 - 你的回答按提供方和服务器名称记下。地址变了，App 会重新询问。
 - 你可以随时在 设置 › AI 模型 里撤回同意（“撤回同意”）。之后不再向它发送新的请求；已经在进行的请求可能会完成。已经发出的文字无法收回。
-- 本机或局域网的提供方，以及 Apple 本机模型，不需要这一步，因为数据不离开你的 Mac 或你的网络。
+- 本机或局域网的提供方不需要这一步，因为数据不离开你的 Mac 或你的网络。
 
 **只限本地处理的录音。** 默认情况下，每段录音都可以发给你同意过的提供方，私人录音也包括在内。下面这些录音按**仅本地**处理：
 
@@ -484,7 +482,6 @@ Mac App Store 版不带这两样。
 ### 4.5 App 在你 Mac 上用到的 Apple 服务
 
 - **提醒事项。** 你在“待办”页面点“同步到提醒事项”时，App 把未完成的待办放进“提醒事项”里名为“Alicia Recorder”的列表（待办内容、录音日期和标题，已知时还有负责人和截止日期），并同步完成状态。如果你的提醒事项使用 iCloud，由 Apple 同步。
-- **Apple 本机模型**（如果你添加了）在你的 Mac 上运行。
 - **App Store**（Mac App Store 版）：用于试用和购买，见第 4.7 节。
 
 ### 4.6 Mac App Store 版和直发版
